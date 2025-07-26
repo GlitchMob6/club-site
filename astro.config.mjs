@@ -7,6 +7,5 @@ export default defineConfig({
   integrations: [mdx(), sitemap()],
 });
 
-export const SITE_TITLE = "Club Name";
-export const SITE_DESCRIPTION = "Rocetry and Space Exploration Club Website";
+
 
