@@ -1,22 +1,30 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import Layout from '../layouts/BaseLayout.astro'; // or whatever layout you're using
 ---
+<Layout>
+  <section class="hero" data-aos="fade-in">
+    <h1 class="breathing text-5xl font-bold text-white text-center mt-10">
+      🚀 Welcome to Your Space Club
+    </h1>
+    <p class="text-center text-slate-300 mt-4 text-lg">
+      Igniting curiosity beyond the skies
+    </p>
+    <div class="cta-container text-center mt-6">
+      <a href="/blog/latest" class="cta-button">
+        Read Latest Blog
+      </a>
+    </div>
+  </section>
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p> This was edited! </p>
-			<p> The club is organised by KBTCOE TEAM LOREM AALAFHEFJAKLFJADJKFADJF AKLDJFE:OIJFI:OAJFALNVJFNALQKJE </p>
-		</main>
-		<Footer />
-	</body>
-</html>
+  <section class="features mt-20 space-y-16">
+    <div class="feature" data-aos="fade-up">
+      <h2 class="text-3xl font-semibold text-white">Explore Projects</h2>
+      <p class="text-slate-400">Hands-on work from club members.</p>
+    </div>
+    <div class="feature" data-aos="fade-up" data-aos-delay="200">
+      <h2 class="text-3xl font-semibold text-white">Register for Events</h2>
+      <p class="text-slate-400">Join us in upcoming missions and challenges.</p>
+    </div>
+  </section>
+</Layout>
+
