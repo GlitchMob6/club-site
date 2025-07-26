@@ -1,7 +1,10 @@
 ---
-import Layout from '../layouts/BaseLayout.astro'; // or whatever layout you're using
+import Layout from '../layouts/BlogPost.astro';
 ---
-<Layout>
+<Layout
+  title=""
+  description="Welcome to Your Space Club"
+>
   <section class="hero" data-aos="fade-in">
     <h1 class="breathing text-5xl font-bold text-white text-center mt-10">
       🚀 Welcome to Your Space Club
@@ -10,7 +13,7 @@ import Layout from '../layouts/BaseLayout.astro'; // or whatever layout you're u
       Igniting curiosity beyond the skies
     </p>
     <div class="cta-container text-center mt-6">
-      <a href="/blog/latest" class="cta-button">
+      <a href="/blog" class="cta-button">
         Read Latest Blog
       </a>
     </div>
