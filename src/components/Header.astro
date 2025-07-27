@@ -1,10 +1,13 @@
 <header class="fixed top-0 w-full z-50 bg-black/70 backdrop-blur-md text-white shadow-md">
-  <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-    <a href="/" class="text-2xl font-bold text-cyan-400 flex items-center gap-2">
-      🚀 Rocket Club
-    </a>
-
-    <ul class="flex gap-8 items-center">
+  <nav class="max-w-7xl mx-auto flex items-center px-6 py-4">
+    <!-- Brand -->
+    <div class="flex-none" >
+      <a href="/" class="text-2xl font-bold text-cyan-400 flex items-center gap-2">
+        🚀 Rocket Club
+      </a>
+    </div>
+    <!-- Navigation Links -->
+    <ul class="flex-1 flex justify-center gap-8 items-center">
       <li><a href="/blog" class="hover:text-cyan-300 transition">Events</a></li>
       <li><a href="/gallery" class="hover:text-cyan-300 transition">Gallery</a></li>
       <li><a href="/contact" class="hover:text-cyan-300 transition">Contact</a></li>
@@ -12,7 +15,7 @@
         <button class="hover:text-cyan-300 transition flex items-center gap-1">
           Register ▾
         </button>
-        <ul class="absolute right-0 mt-2 bg-black text-white py-2 rounded-md shadow-lg w-32 hidden group-hover:block z-50">
+        <ul class="absolute right-0 mt-2 bg-black text-white py-2 rounded-md shadow-lg w-32 opacity-0 group-hover:opacity-100 group-hover:block pointer-events-none group-hover:pointer-events-auto transition duration-200 ease-in-out">
           <li><a href="/register/event" class="block px-4 py-2 hover:bg-cyan-400 hover:text-black transition">Event</a></li>
           <li><a href="/register/team" class="block px-4 py-2 hover:bg-cyan-400 hover:text-black transition">Team</a></li>
         </ul>

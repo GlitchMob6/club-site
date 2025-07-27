@@ -4,8 +4,11 @@ import { getCollection } from 'astro:content';
 const allPosts = await getCollection('blog');
 const latestPost = allPosts[0]; // Just take the first post, no date sorting
 ---
-<Layout
-    title="Home"
+<body class="bg-black text-white">
+	<div class="bg-[url('/assets/space-bg.jpg')] bg-cover bg-fixed bg-center min-h-screen">
+    <div class="backdrop-blur-sm bg-black/60 min-h-screen">
+	<Layout
+	title="Club name"			
     description="Welcome to Your Space Club"
 >
     <section class="hero" data-aos="fade-in">
@@ -33,5 +36,8 @@ const latestPost = allPosts[0]; // Just take the first post, no date sorting
     <section class="cta-section">
         <a href="/events" class="cta-button">Explore More Such Events</a>
     </section>
-</Layout>
+	</Layout>
+	</div>
+  </div>
+</body>
 
