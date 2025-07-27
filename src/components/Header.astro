@@ -3,7 +3,8 @@ import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 ---
 
-<header>
+<header class="bg-black/70 backdrop-blur-md text-white fixed top-0 w-full z-50">
+
 	<nav>
 		<ul>
 			<a href="/">Home</a>
@@ -20,7 +21,7 @@ import HeaderLink from './HeaderLink.astro';
 		</ul>
 	</nav>
 
-	<div class="social-links">
+	<div class="flex items-center gap-4 ml-auto ">
 
 		<a id="ig-link" target="_blank" rel="noopener" aria-label="Instagram">
 			<svg width="32" height="32" viewBox="0 0 16 16" aria-hidden="true">

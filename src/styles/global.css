@@ -4,6 +4,7 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
+
 :root {
 	--accent: #2337ff;
 	--accent-dark: #000d8a;
@@ -31,17 +32,9 @@
 	font-display: swap;
 }
 body {
-	font-family: "Atkinson", sans-serif;
-	margin: 0;
-	padding: 0;
-	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
-	font-size: 20px;
-	line-height: 1.7;
+	background: url('/space-bg.jpg') no-repeat center center fixed;
+	background-size: cover;
+	color: white;
 }
 main {
 	width: 720px;
@@ -153,10 +146,12 @@ hr {
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
-@import "aos/dist/aos.css";
+
+
+
 
 .breathing {
-  animation: breathe 6s ease-in-out infinite;
+  animation: nowrap;
 }
 
 @keyframes breathe {
@@ -208,4 +203,17 @@ hr {
 .cta-button:hover {
   background: #1e1e2e;
 }
+
+header {
+  background: rgba(0, 0, 0, 0.7); /* dark semi-transparent */
+  backdrop-filter: blur(8px); /* optional for glass effect */
+  color: black;
+  z-index: 999;
+}
+
+header.scrolled {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+}
+
 
