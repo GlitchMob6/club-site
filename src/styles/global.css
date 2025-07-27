@@ -185,4 +185,27 @@ hr {
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
   border-color: cyan;
 }
+.latest-post {
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.cta-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.cta-button {
+  background: #0b0f19;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #1e1e2e;
+}
 
