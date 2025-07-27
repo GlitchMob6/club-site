@@ -2,42 +2,67 @@
 import Layout from '../layouts/BlogPost.astro';
 import { getCollection } from 'astro:content';
 const allPosts = await getCollection('blog');
-const latestPost = allPosts[0]; // Just take the first post, no date sorting
+import StarryBackground from "../components/StarryBackground.astro";
+const latestPost = allPosts[0];
 ---
-<body class="bg-black text-white">
-	<div class="bg-[url('/assets/space-bg.jpg')] bg-cover bg-fixed bg-center min-h-screen">
-    <div class="backdrop-blur-sm bg-black/60 min-h-screen">
-	<Layout
-	title="Club name"			
-    description="Welcome to Your Space Club"
->
-    <section class="hero" data-aos="fade-in">
-        <h1 class="breathing text-5xl font-bold text-white text-center mt-10">
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rocket Club</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="relative bg-black text-white overflow-x-hidden">
+    <StarryBackground />
+
+    <!-- MAIN SITE CONTENT -->
+    <div class="relative z-10 min-h-screen backdrop-blur-sm bg-black/60">
+      <Layout
+        title="Club name"
+        description="Welcome to Your Space Club"
+      >
+        <!-- HERO SECTION -->
+        <section class="hero" data-aos="fade-in">
+          <h1 class="breathing text-5xl font-bold text-white text-center mt-10">
             🚀 Welcome to Your Space Club
-        </h1>
-        <p class="text-center text-slate-300 mt-4 text-lg">
+          </h1>
+          <p class="text-center text-slate-300 mt-4 text-lg">
             Igniting curiosity beyond the skies
-        </p>
-    </section>
+          </p>
+        </section>
 
-    <section class="latest-post">
-        <h2 class="section-title">Latest from the Club</h2>
-        {latestPost && latestPost.data && latestPost.slug ? (
-            <article class="post-preview">
-                <h3>{latestPost.data.title}</h3>
-                <p>{latestPost.data.description}</p>
-                <a href={`/blog/${latestPost.slug}`}>Read More →</a>
+        <!-- BLOG SECTION -->
+        <section class="latest-post mt-12 px-4">
+          <h2 class="section-title text-2xl text-cyan-300 font-semibold text-center mb-4">
+            Latest from the Club
+          </h2>
+          {latestPost && latestPost.data && latestPost.slug ? (
+            <article class="post-preview text-center">
+              <h3 class="text-xl font-bold">{latestPost.data.title}</h3>
+              <p class="text-slate-400 mt-2">{latestPost.data.description}</p>
+              <a href={`/blog/${latestPost.slug}`} class="text-cyan-400 underline mt-2 inline-block">
+                Read More →
+              </a>
             </article>
-        ) : (
-            <p>No posts found.</p>
-        )}
-    </section>
+          ) : (
+            <p class="text-center text-slate-500">No posts found.</p>
+          )}
+        </section>
 
-    <section class="cta-section">
-        <a href="/events" class="cta-button">Explore More Such Events</a>
-    </section>
-	</Layout>
-	</div>
-  </div>
-</body>
+        <!-- CTA SECTION -->
+        <section class="cta-section text-center mt-16">
+          <a href="/events" class="cta-button bg-cyan-500 hover:bg-cyan-400 px-6 py-3 rounded-xl text-white font-semibold shadow-lg transition duration-300">
+            Explore More Such Events
+          </a>
+        </section>
+      </Layout>
+    </div>
+  </body>
+</html>
 
