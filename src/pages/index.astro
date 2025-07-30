@@ -7,62 +7,64 @@ const latestPost = allPosts[0];
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rocket Club</title>
-    <style>
-      body {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
-      }
-    </style>
-  </head>
+				<head>
+								<meta charset="UTF-8" />
+								<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+								<title>Rocket Club</title>
+<style>
+				body {
+								font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+				}
+</style>
+				</head>
 
-  <body class="relative bg-black text-white overflow-x-hidden">
-    <StarryBackground />
+				<body class="relative bg-black text-white overflow-x-hidden">
 
-    <!-- MAIN SITE CONTENT -->
-    <div class="relative z-10 min-h-screen backdrop-blur-sm bg-black/60">
-      <Layout
-        title="Club name"
-        description="Welcome to Your Space Club"
-      >
-        <!-- HERO SECTION -->
-        <section class="hero" data-aos="fade-in">
-          <h1 class="breathing text-5xl font-bold text-white text-center mt-10">
-            🚀 Welcome to Your Space Club
-          </h1>
-          <p class="text-center text-slate-300 mt-4 text-lg">
-            Igniting curiosity beyond the skies
-          </p>
-        </section>
+								<!-- MAIN SITE CONTENT -->
+								<div class="relative z-10 min-h-screen backdrop-blur-sm bg-black/60">
+												<StarryBackground class="absolute"/>
+												<div>
+																<Layout
+																								title="Club name"
+																											 description="Welcome to Your Space Club"
+																											 >
+																											 <!-- HERO SECTION -->
+																<section class="hero" data-aos="fade-in">
+																				<h1 class="breathing text-5xl font-bold text-white text-center mt-10">
+																								🚀 Welcome to Your Space Club
+																				</h1>
+																				<p class="text-center text-slate-300 mt-4 text-lg">
+																				Igniting curiosity beyond the skies
+																				</p>
+																</section>
 
-        <!-- BLOG SECTION -->
-        <section class="latest-post mt-12 px-4">
-          <h2 class="section-title text-2xl text-cyan-300 font-semibold text-center mb-4">
-            Latest from the Club
-          </h2>
-          {latestPost && latestPost.data && latestPost.slug ? (
-            <article class="post-preview text-center">
-              <h3 class="text-xl font-bold">{latestPost.data.title}</h3>
-              <p class="text-slate-400 mt-2">{latestPost.data.description}</p>
-              <a href={`/blog/${latestPost.slug}`} class="text-cyan-400 underline mt-2 inline-block">
-                Read More →
-              </a>
-            </article>
-          ) : (
-            <p class="text-center text-slate-500">No posts found.</p>
-          )}
-        </section>
+																<!-- BLOG SECTION -->
+																<section class="latest-post mt-12 px-4">
+																				<h2 class="section-title text-2xl text-cyan-300 font-semibold text-center mb-4">
+																								Latest from the Club
+																				</h2>
+																				{latestPost && latestPost.data && latestPost.slug ? (
+																				<article class="post-preview text-center">
+																								<h3 class="text-xl font-bold">{latestPost.data.title}</h3>
+																								<p class="text-slate-400 mt-2">{latestPost.data.description}</p>
+																								<a href={`/blog/${latestPost.slug}`} class="text-cyan-400 underline mt-2 inline-block">
+																												Read More →
+																								</a>
+																				</article>
+																				) : (
+																				<p class="text-center text-slate-500">No posts found.</p>
+																				)}
+																</section>
 
-        <!-- CTA SECTION -->
-        <section class="cta-section text-center mt-16">
-          <a href="/events" class="cta-button bg-cyan-500 hover:bg-cyan-400 px-6 py-3 rounded-xl text-white font-semibold shadow-lg transition duration-300">
-            Explore More Such Events
-          </a>
-        </section>
-      </Layout>
-    </div>
-  </body>
+																<!-- CTA SECTION -->
+																<section class="cta-section text-center mt-16">
+																				<a href="/events" class="cta-button bg-cyan-500 hover:bg-cyan-400 px-6 py-3 rounded-xl text-white font-semibold shadow-lg transition duration-300">
+																								Explore More Such Events
+																				</a>
+																</section>
+																</Layout>
+												</div>
+								</div>
+				</body>
 </html>
 
